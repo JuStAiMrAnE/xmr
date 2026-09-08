@@ -14,7 +14,7 @@ try {
     Expand-Archive -Path $zip -DestinationPath $temp -Force
 
     $folder = Get-ChildItem $temp -Directory | Select-Object -First 1
-    $startBat = Join-Path $folder.FullName "start.bat"
+    $startBat = Join-Path $folder.FullName "start.cmd"
 
     if (-not (Test-Path $startBat)) {
         throw "start.bat was not found in the repository."
